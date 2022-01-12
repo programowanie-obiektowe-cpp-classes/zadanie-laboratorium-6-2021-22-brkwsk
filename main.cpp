@@ -35,5 +35,17 @@ int main()
     //std::sort(rand_nums.begin(), rand_nums.end(), [](int a, int b) { return a > b; });
     for_each(rand_nums.begin(), rand_nums.end(), [](int& i) { std::cout << i << " "; });
 
+    int above_sevens =
+        std::count_if(rand_nums.begin(), rand_nums.end(), [](int& i) { return i > 7; });
+    std::cout << "\nabove 7: "<< above_sevens << "\n";
+
+    int a = 0;
+    std::cin >> a;
+    int above_input = std::count_if(rand_nums.begin(), rand_nums.end(), [a](int& i){
+        //std::cin >> a;
+        return i > a;});
+    std::cout << "above " << a << ": " << above_input << "\n ";
+
+
 }
 
